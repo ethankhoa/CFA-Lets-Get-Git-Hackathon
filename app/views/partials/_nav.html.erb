@@ -30,6 +30,7 @@
 
         <%= link_to('Logout', destroy_user_session_path, class: "nav-item is-tab", :method => :delete) %>
         <% else %>
+          <%= link_to('Sign Up', new_user_session_path, class: "nav-item is-tab")  %>
           <%= link_to('Login', new_user_session_path, class: "nav-item is-tab")  %>
         <% end %>
         </a>
