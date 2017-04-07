@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170407044623) do
     t.datetime "updated_at",                 null: false
     t.index ["project_id"], name: "index_collaborators_on_project_id", using: :btree
     t.index ["user_id"], name: "index_collaborators_on_user_id", using: :btree
+  end
 
   create_table "forums", force: :cascade do |t|
     t.string   "name"
