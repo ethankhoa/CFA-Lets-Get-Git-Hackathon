@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @topic.name  %></h1>
+
+<div class="panel panel-default">
+<table class="table">
+  <% for post in @topic.posts %>
+    <tr>
+      <td><%= post.content %>
+      <br><br>
+      <p style="font-style: italic"><%= "By #{post.user.username} #{time_ago_in_words(post.created_at)} ago"%>
+        <% unless post.updated_at == post.created_at %>
+          <%= ", Edited #{time_ago_in_words(post.updated_at)} ago"%>
+          <% end %>
+      </p>
+      <td class="right"></td>
+      <td><%= link_to "Edit", edit_post_path(post), class: "btn btn-default" %></td>
+      <td><%= link_to "Destroy", post, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %></td>
+    </tr>
+  <% end %>
+</table>
+</div>
+
+<p><%= link_to "New reply", "/posts/new?topic=#{@topic.id}", class: "btn btn-default" %></p>

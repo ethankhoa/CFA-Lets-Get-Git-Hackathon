@@ -4,6 +4,10 @@ Rails.application.routes.draw do
       resources :collaborators
     # end
   end
+  resources :posts
+  resources :forums
+  resources :topics
+
   root 'pages#home'
 
   get 'pages/about'
