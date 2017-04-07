@@ -20,6 +20,10 @@
 </p>
 
 <p>
+  <%= link_to 'join', new_project_collaborator_path(project_id: @project.id)%>
+</p>
+
+<p>
   <strong>Status:</strong>
   <%= @project.status %>
 </p>

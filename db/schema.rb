@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407015354) do
+ActiveRecord::Schema.define(version: 20170407042913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "collaborators", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.boolean  "approved",   default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["project_id"], name: "index_collaborators_on_project_id", using: :btree
+    t.index ["user_id"], name: "index_collaborators_on_user_id", using: :btree
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "title",                      null: false
@@ -48,5 +58,7 @@ ActiveRecord::Schema.define(version: 20170407015354) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
+  add_foreign_key "collaborators", "projects"
+  add_foreign_key "collaborators", "users"
   add_foreign_key "projects", "users"
 end

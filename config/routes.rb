@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :projects
+  resources :projects do
+    # member do
+      resources :collaborators
+    # end
+  end
   root 'pages#home'
 
   get 'pages/about'

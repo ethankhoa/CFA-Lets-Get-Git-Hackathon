@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :projects
+  has_many :collaborators
 
   def login=(login)
     @login = login
