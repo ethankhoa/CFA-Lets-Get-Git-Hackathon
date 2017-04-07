@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :forums
+  resources :topics
   resources :projects
   root 'pages#home'
 
