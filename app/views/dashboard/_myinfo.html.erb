@@ -1,0 +1,22 @@
+<h1 class="subtitle">USER INFO</h1>
+
+
+
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-164x164">
+        <%=image_tag(Gravatar.new("#{current_user.email}").image_url)%>
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= current_user.username %></strong> <small><%= current_user.email %></small>
+          <br>
+          List of stuff
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
