@@ -10,5 +10,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @projects = current_user.projects
+    @collaborators = Collaborator.all
   end
 end

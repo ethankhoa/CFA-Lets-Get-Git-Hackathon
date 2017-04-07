@@ -1,0 +1,19 @@
+<% @collaborators.each do |c| %>
+<table class="table">
+  <tr>
+  <h1 class="subtitle">Collaborator Requests</h1>
+  <th>Project Name</th>
+  <th>Username</th>
+  <th>Email</th>
+  <th>Approval Status</th>
+
+
+  </tr>
+<td><%= c.project.title %></td>
+<td><%= c.user.username %></td>
+<td><%= c.user.email %></td>
+<td><%= c.approved %></td>
+
+</table>
+
+<% end %>
