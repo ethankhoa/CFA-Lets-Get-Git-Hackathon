@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @collaborator.project.title %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @collaborator.project.id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @collaborator.user.username %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @collaborator.approved %>
+</p>
+
+<%= link_to 'Edit', edit_project_collaborator_path(@collaborator) %> |
+<%= link_to 'Back', project_collaborators_path %>

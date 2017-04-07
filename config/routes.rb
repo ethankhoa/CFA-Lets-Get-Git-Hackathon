@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  resources :projects do
+    # member do
+      resources :collaborators
+    # end
+  end
   resources :posts
   resources :forums
   resources :topics
-  resources :projects
+
   root 'pages#home'
 
   get 'pages/about'

@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 20170407044623) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "collaborators", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.boolean  "approved",   default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["project_id"], name: "index_collaborators_on_project_id", using: :btree
+    t.index ["user_id"], name: "index_collaborators_on_user_id", using: :btree
+
   create_table "forums", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -75,6 +84,8 @@ ActiveRecord::Schema.define(version: 20170407044623) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
+  add_foreign_key "collaborators", "projects"
+  add_foreign_key "collaborators", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "topics", "users"
