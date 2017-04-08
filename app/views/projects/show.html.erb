@@ -19,17 +19,14 @@
   <%= @project.description %>
 </p>
 
-  <% if @collaborators.any? %>
     <% @collaborators.each do |c| %>
       <% if c.user_id == current_user.id %>
         <p><%= link_to 'Leave Project', [@project, c], method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <% else %>
         <p><%= link_to 'Join Project', new_project_collaborator_path(project_id: @project.id)%></p>
-      <% end %>
-      <% end %>
-  <% else %>
-    <p><%= link_to 'Join Project', new_project_collaborator_path(project_id: @project.id)%></p>
-  <% end %>
+        <% end %>
+    <% end %>
+
 
 
 

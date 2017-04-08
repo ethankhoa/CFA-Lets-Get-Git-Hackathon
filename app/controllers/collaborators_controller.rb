@@ -22,6 +22,8 @@ class CollaboratorsController < ApplicationController
 
   # GET /collaborators/1/edit
   def edit
+    @collaborators = Collaborator.all
+    @project = Project.find(params[:project_id])
   end
 
   # POST /collaborators
