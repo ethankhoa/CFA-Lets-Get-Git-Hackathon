@@ -13,4 +13,9 @@ class PagesController < ApplicationController
     @projects = current_user.projects
     @collaborators = Collaborator.all
   end
+
+  def users
+    @users = User.all
+  end
+
 end
