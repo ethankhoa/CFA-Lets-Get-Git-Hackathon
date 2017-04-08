@@ -12,13 +12,15 @@
                         <th>Username</th>
                         <th>Email</th>
                         <th>Approval Status</th>
+                        <th></th>
+                        <!-- add button to change status of collaborators here -->
                     </tr>
 
                     <td><%= c.project.title %></td>
                     <td><%= c.user.username %></td>
                     <td><%= c.user.email %></td>
                     <td><%= c.approved %></td>
-
+                    <td><a class="button is-info is-outlined">Approve</a></td>
                 </table>
                 <% end %>
             </div>
