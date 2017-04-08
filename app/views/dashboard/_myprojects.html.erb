@@ -1,17 +1,25 @@
-<% @projects.each do |project| %>
-<table class="table">
-  <tr>
-  <h1 class="subtitle">MY PROJECTS</h1>
-  <th>Title</th>
-  <th>Status</th>
-  <th>Start Date</th>
-  <th>Languages</th>
-  </tr>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        MY PROJECTS
+      </h1>
+      <% @projects.each do |project| %>
+        <table class="table" style="background-color:whitesmoke";>
+          <tr>
+              <th>Title</th>
+              <th>Status</th>
+              <th>Start Date</th>
+              <th>Languages</th>
+          </tr>
 
-<td><%= project.title %></td>
-<td><%= project.status %></td>
-<td><%= project.start_date %></td>
-<td><%= project.languages %></td>
-</table>
+          <td><%= project.title %></td>
+          <td><%= project.status %></td>
+          <td><%= project.start_date %></td>
+          <td><%= project.languages %></td>
 
-<% end %>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</section>
