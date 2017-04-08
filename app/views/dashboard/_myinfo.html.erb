@@ -1,22 +1,21 @@
-<h1 class="subtitle">USER INFO</h1>
-
-
-
 <div class="box">
-  <article class="media">
-    <div class="media-left">
-      <figure class="image is-164x164">
-        <%=image_tag(Gravatar.new("#{current_user.email}").image_url)%>
-      </figure>
-    </div>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong><%= current_user.username %></strong> <small><%= current_user.email %></small>
-          <br>
-          List of stuff
-        </p>
-      </div>
-    </div>
-  </article>
+    <article class="media">
+        <div class="media-left">
+            <figure class="image is-164x164">
+                <%=image_tag(Gravatar.new("#{current_user.email}").image_url)%>
+            </figure>
+        </div>
+
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    <strong><%= current_user.username %></strong>
+                    <small><%= current_user.email %></small>
+                    <br>
+                    <!--place holder for user details-->
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+    </article>
 </div>

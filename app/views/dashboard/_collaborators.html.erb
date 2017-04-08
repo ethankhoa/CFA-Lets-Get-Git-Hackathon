@@ -1,19 +1,27 @@
-<% @collaborators.each do |c| %>
-<table class="table">
-  <tr>
-  <h1 class="subtitle">Collaborator Requests</h1>
-  <th>Project Name</th>
-  <th>Username</th>
-  <th>Email</th>
-  <th>Approval Status</th>
+<div class="box">
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
+                <h2 class="subtitle">
+                    COLLABORATORS REQUESTS
+                </h2>
+                <% @collaborators.each do |c| %>
+                <table class="table">
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Approval Status</th>
+                    </tr>
 
+                    <td><%= c.project.title %></td>
+                    <td><%= c.user.username %></td>
+                    <td><%= c.user.email %></td>
+                    <td><%= c.approved %></td>
 
-  </tr>
-<td><%= c.project.title %></td>
-<td><%= c.user.username %></td>
-<td><%= c.user.email %></td>
-<td><%= c.approved %></td>
-
-</table>
-
-<% end %>
+                </table>
+                <% end %>
+            </div>
+        </div>
+    </article>
+</div>
