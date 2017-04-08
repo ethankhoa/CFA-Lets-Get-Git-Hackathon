@@ -4,29 +4,24 @@
             <a class="nav-item">
                 <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
             </a>
-            <a class="nav-item is-tab is-hidden-mobile is-active">Home</a>
-
+            <a class="nav-item is-tab is-active" href="/">Home</a>
         </div>
-
-        <span class="nav-toggle"></span>
-
+        
         <div class="nav-right nav-menu">
-            <a class="nav-item is-tab is-hidden-tablet is-active">Home</a>
-
             <% if user_signed_in? %>
-            <a class="nav-item is-tab">
-                <figure class="image is-24x24" style="margin-right: 8px;">
-                    <%=image_tag(Gravatar.new("#{current_user.email}").image_url)%>
-                </figure>
-                Profile <!-- add link to user dashboard -->
-            </a>
-            <a class="nav-item is-tab">
+                <%= link_to('Forum', forums_path, class: "nav-item is-tab")  %>
+                <a class="nav-item is-tab">
+                    <figure class="image is-16x16" style="margin-right: 8px;">
+                        <%= image_tag(Gravatar.new("#{current_user.email}").image_url)%>
+                    </figure>
+                    Profile
+                    <!-- add link to user dashboard -->
+                </a>
                 <%= link_to('Logout', destroy_user_session_path, class: "nav-item is-tab", :method => :delete) %>
             <% else %>
-                <%= link_to('Sign Up', new_user_session_path, class: "nav-item is-tab")  %>
+                <%= link_to('Sign Up', new_user_registration_path, class: "nav-item is-tab")  %>
                 <%= link_to('Login', new_user_session_path, class: "nav-item is-tab")  %>
-                <% end %>
-            </a>
+            <% end %>
         </div>
     </div>
 </nav>
