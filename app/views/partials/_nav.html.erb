@@ -5,8 +5,12 @@
                 <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
             </a>
             <a class="nav-item is-tab is-active" href="/">Home</a>
+            <% if user_signed_in? %>
+              <%= link_to('Dashboard', pages_dashboard_path, class: "nav-item is-tab")  %>
+              <%= link_to('Find Collaborators', pages_users_path, class: "nav-item is-tab")  %>
+            <% end %>
         </div>
-        
+
         <div class="nav-right nav-menu">
             <% if user_signed_in? %>
                 <%= link_to('Forum', forums_path, class: "nav-item is-tab")  %>
