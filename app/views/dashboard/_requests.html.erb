@@ -4,9 +4,7 @@
             <h2 class="subtitle">
                 COLLABORATOR REQUESTS
             </h2>
-
-            <% @projects.each do |project| %>
-            <% project.collaborators.each do |c| %>
+            <% @pending_collaborators.each do |c| %>
             <table class="table">
                 <tr>
                     <th>Project Name</th>
@@ -14,18 +12,15 @@
                     <th>Email</th>
                     <th>Approval Status</th>
                     <th></th>
-                    <!-- add button to change status of collaborators here -->
                 </tr>
-
                 <td><%= c.project.title %></td>
                 <td><%= c.user.username %></td>
                 <td><%= c.user.email %></td>
                 <td><%= c.approved %></td>
                 <td>
-                    <%= link_to 'Approve', edit_project_collaborator_path(project_id: c.project_id, id: c.id), class: "button is-info is-outlined" %>
+                   <%= link_to 'Approve', edit_project_collaborator_path(project_id: c.project_id, id: c.id), class: "button is-info is-outlined" %>
                 </td>
             </table>
-            <% end %>
             <% end %>
         </div>
     </div>

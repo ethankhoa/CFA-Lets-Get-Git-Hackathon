@@ -1,6 +1,8 @@
 class CollaboratorsController < ApplicationController
   before_action :set_collaborator, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /collaborators
   # GET /collaborators.json
   def index
@@ -32,7 +34,7 @@ class CollaboratorsController < ApplicationController
     @collaborator = Collaborator.new(collaborator_params)
     @collaborator.user_id = current_user.id
     @project = Project.find(params[:project_id])
-    # @collaborator.project_id = @project.id
+    #@collaborator.project_id = @project.id
     @collaborator.project_id = params[:project_id]
 
     respond_to do |format|
@@ -49,6 +51,7 @@ class CollaboratorsController < ApplicationController
   # PATCH/PUT /collaborators/1
   # PATCH/PUT /collaborators/1.json
   def update
+    @collaborator = Collaborator.find(params[:id])
     respond_to do |format|
       if @collaborator.update(collaborator_params)
         format.html { redirect_to project_collaborators_path, notice: 'Collaborator was successfully updated.' }
