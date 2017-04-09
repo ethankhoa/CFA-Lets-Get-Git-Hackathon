@@ -1,0 +1,23 @@
+<section class="hero is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title has-text-centered">
+          Users
+        </h1>
+      </div>
+
+    <div class="columns is-multiline">
+      <% @users.first(4).each do |user| %>
+          <div class="column is-half" style="padding:1em 3em 1em 3em;">
+            <figure class="image is-2by1">
+              <img src="http://bulma.io/images/placeholders/480x480.png">
+            </figure>
+            <figure class="image is-64x64">
+              <%=image_tag(Gravatar.new("#{user.email}").image_url)%>
+            </figure>
+            <strong><%= user.username %></strong>
+            <small><%= user.email %></small>
+          </div>
+      <% end %>
+    </div>
+</section>
