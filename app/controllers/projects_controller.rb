@@ -6,12 +6,13 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @collaborators = Collaborator.all
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @collaborator = Collaborator.find(params[:collaborator_id])
+    @collaborators = Collaborator.all
   end
 
   # GET /projects/new

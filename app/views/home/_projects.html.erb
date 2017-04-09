@@ -11,6 +11,7 @@
                 <figure class="image is-400x400">
                     <%=  image_tag "/assets/react-logo.png" %>
                 </figure>
+
                 <strong style="padding:0 0 0 1em; font-size:150%"><%= project.title %></strong>
                 <p style="padding-top:0;">by
                     <%= project.user.username %></p>
@@ -18,6 +19,11 @@
                     <%= project.start_date %></p>
                 <p style="padding-top:0;">Status:
                     <%= project.status %></p>
+                          <div class ="footer">
+                  <%= link_to 'Show', project, class: "button is-primary"%>
+                  <i class="fa fa-star button is-primary stars" aria-hidden="true"> <%= project.ratings %></i>
+                  <i class="fa fa-users button is-primary stars" aria-hidden="true"> <%= @collaborators.where(:project_id => project.id, :approved => true).count %></i>
+              </div>
             </div>
             <% end %>
         </div>
