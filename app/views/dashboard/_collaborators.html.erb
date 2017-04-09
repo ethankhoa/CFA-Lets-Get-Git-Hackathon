@@ -2,9 +2,11 @@
     <div class="media-content">
         <div class="content">
             <h2 class="subtitle">
-                COLLABORATORS REQUESTS
+                COLLABORATOR REQUESTS
             </h2>
-            <% @collaborators.each do |c| %>
+
+            <% @projects.each do |project| %>
+            <% project.collaborators.each do |c| %>
             <table class="table">
                 <tr>
                     <th>Project Name</th>
@@ -20,9 +22,10 @@
                 <td><%= c.user.email %></td>
                 <td><%= c.approved %></td>
                 <td>
-                    <a class="button is-info is-outlined">Approve</a>
+                    <%= link_to 'Approve', edit_project_collaborator_path(project_id: c.project_id, id: c.id), class: "button is-info is-outlined" %>
                 </td>
             </table>
+            <% end %>
             <% end %>
         </div>
     </div>
