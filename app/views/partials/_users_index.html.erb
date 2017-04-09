@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="columns is-multiline">
+        <% @users.each do |user| %>
+        <div class="column is-one-third">
+            <div class="card" style="background-color: whitesmoke;">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="http://bulma.io/images/placeholders/640x480.png" alt="Image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                            <figure class="image is-164x164">
+                                <%=image_tag(Gravatar.new("#{user.email}").image_url)%>
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4"><%= user.username %></p>
+                            <p class="subtitle is-6"><%= user.email %></p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+  <section></section>
+</div>
