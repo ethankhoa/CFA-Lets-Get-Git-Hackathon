@@ -7,13 +7,15 @@
         </div>
         <div class="columns is-multiline">
 
-        <% @projects.first(6).each do |project| %>
-            <div class="column is-one-third">
-              <p><%= project.title %></p>
-              <p><%= project.user.username %></p>
-                <figure class="image is-400x400">
-                    <img src="http://bulma.io/images/placeholders/480x480.png">
-                </figure>
+        <% @projects.first(5).each do |project| %>
+            <div class="column is-gapless">
+              <figure class="image is-400x400">
+                  <%=  image_tag "/assets/react-logo.png" %>
+              </figure>
+              <strong style="padding:0 0 0 1em; font-size:150%"><%= project.title %></strong>
+              <p style="padding-top:0;">by <%= project.user.username %></p>
+              <p style="padding-top:0;">Starting on <%= project.start_date %></p>
+              <p style="padding-top:0;">Status: <%= project.status %></p>
             </div>
         <% end %>
       </div>
