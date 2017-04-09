@@ -5,15 +5,17 @@
                 Projects
             </h1>
         </div>
-        <% @projects.each do |project| %>
-        <div class="columns">
+        <div class="columns is-multiline">
+
+        <% @projects.first(6).each do |project| %>
             <div class="column is-one-third">
-              <p>Title</p>
+              <p><%= project.title %></p>
+              <p><%= project.user.username %></p>
                 <figure class="image is-400x400">
                     <img src="http://bulma.io/images/placeholders/480x480.png">
                 </figure>
             </div>
-        </div>
         <% end %>
+      </div>
     </div>
 </section>
