@@ -2,9 +2,11 @@
     <div class="media-content">
         <div class="content">
             <h2 class="subtitle">
-                COLLABORATORS REQUESTS
+                COLLABORATOR REQUESTS
             </h2>
-            <% @collaborators.each do |c| %>
+            
+            <% @projects.each do |project| %>
+            <% project.collaborators.each do |c| %>
             <table class="table">
                 <tr>
                     <th>Project Name</th>
@@ -23,6 +25,7 @@
                     <a class="button is-info is-outlined">Approve</a>
                 </td>
             </table>
+            <% end %>
             <% end %>
         </div>
     </div>
