@@ -1,16 +1,4 @@
 <section></section>
-<h1 class="title">CURRENT PROJECTS</h1>
-
-<table>
-    <thead>
-        <tr>
-            <th colspan="1"></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <% @projects.each do |project| %>
-
         <article class="media" style="padding: 1em;">
             <figure class="media-left">
                 <p class="image is-256x256">
@@ -43,4 +31,34 @@
     </tbody>
 </table>
 
-<br>
+<h1 class="title">CURRENT PROJECTS</h1>
+
+<% @projects.each do |project| %>
+<article class="media" style="padding: 1em;">
+    <figure class="media-left">
+        <p class="image is-256x256">
+            <img src="http://bulma.io/images/placeholders/256x256.png">
+        </p>
+    </figure>
+    <div class="media-content">
+        <div class="content">
+            <strong><%= project.title %></strong>
+            <small><%= project.user.username %></small>
+            <br>
+            <p><%= project.description %></p>
+            <strong>Status:
+                <%= project.status %>
+            </strong>
+            <p>
+                <small>
+                    Start date:<%= project.start_date %>
+                </small>
+                <small>
+                    Ratings:
+                    <%= project.ratings %></small>
+            </p>
+            <%= link_to 'Show', project, class: "button is-primary"%>
+        </div>
+    </div>
+</article>
+<% end %>
