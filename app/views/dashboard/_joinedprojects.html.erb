@@ -1,31 +1,36 @@
-<div class="box">
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        JOINED PROJECTS
-      </h1>
-      <% @collabwith.each do |user| %>
-        <table class="table" style="background-color:whitesmoke";>
-          <tr>
-              <th>Title</th>
-              <th>Status</th>
-              <th>Start Date</th>
-              <th>Languages</th>
-              <th></th>
-          </tr>
-          <td><%= user.project.title %></td>
-          <td><%= user.project.status %></td>
-          <td><%= user.project.start_date %></td>
-          <td>
-            <% user.project.languages.each do |language| %>
-            <%= language.upcase %>
-            <%end%>
-          </td>
-          <td><a class="button is-info is-outlined">Project Dashboard</a></td> <!-- add button to view project dashboard-->
-        </table>
-      <% end %>
+<section class="hero is-warning">
+    <div class="hero-body">
+        <div class="container" style="padding:2em;">
+            <h1 class="title" style="padding:0;">
+                JOINED PROJECTS
+            </h1>
+            <table class="table" style="background-color:#f4b400" ;>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Start Date</th>
+                        <th>Languages</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <% @collabwith.each do |user| %>
+                <tbody>
+                    <td><%= user.project.title %></td>
+                    <td><%= user.project.status %></td>
+                    <td><%= user.project.start_date %></td>
+                    <td>
+                        <% user.project.languages.each do |language| %>
+                        <%= language.upcase %>
+                        <%end%>
+                    </td>
+                    <td>
+                        <%= link_to '<button class="button is-danger is-outlined">Project Dashboard</button>'.html_safe, project_pages_project_dashboard_path(project_id: user.project.id)%>
+                    </td>
+                </tbody>
+                <!-- add button to view project dashboard-->
+                <% end %>
+            </table>
+        </div>
     </div>
-  </div>
 </section>
-</div>

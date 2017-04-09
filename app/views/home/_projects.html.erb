@@ -2,25 +2,30 @@
     <div class="hero-body">
         <div class="container">
             <h1 class="title has-text-centered">
-                Projects
+                PROJECT ROOMS
             </h1>
         </div>
         <div class="columns is-multiline">
-
-        <% @projects.first(6).each do |project| %>
-            <div class="column is-one-third">
-              <p><%= project.title %></p>
-              <p><%= project.user.username %></p>
+            <% @projects.first(5).each do |project| %>
+            <div class="column is-gapless">
                 <figure class="image is-400x400">
-                    <img src="http://bulma.io/images/placeholders/480x480.png">
+                    <%=  image_tag "/assets/react-logo.png" %>
                 </figure>
-                <div class ="footer">
+
+                <strong style="padding:0 0 0 1em; font-size:150%"><%= project.title %></strong>
+                <p style="padding-top:0;">by
+                    <%= project.user.username %></p>
+                <p style="padding-top:0;">Starting on
+                    <%= project.start_date %></p>
+                <p style="padding-top:0;">Status:
+                    <%= project.status %></p>
+                          <div class ="footer">
                   <%= link_to 'Show', project, class: "button is-primary"%>
                   <i class="fa fa-star button is-primary stars" aria-hidden="true"> <%= project.ratings %></i>
                   <i class="fa fa-users button is-primary stars" aria-hidden="true"> <%= @collaborators.where(:project_id => project.id, :approved => true).count %></i>
               </div>
             </div>
-        <% end %>
-      </div>
+            <% end %>
+        </div>
     </div>
 </section>

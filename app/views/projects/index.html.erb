@@ -30,7 +30,7 @@
                             Start date:<%= project.start_date %>
                         </small>
                     </p>
-                    <%= link_to 'Show', project, class: "button is-primary"%>
+                    <%= link_to '<button class="button is-info">Project Dashboard</button>'.html_safe, project_pages_project_dashboard_path(project_id: project.id)%>
                     <i class="fa fa-star button is-primary stars" aria-hidden="true"> <%= project.ratings %></i>
                     <i class="fa fa-users button is-primary stars" aria-hidden="true"> <%= @collaborators.where(:project_id => project.id, :approved => true).count %></i>
                 </div>
