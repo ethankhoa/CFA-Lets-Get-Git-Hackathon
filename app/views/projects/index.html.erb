@@ -9,8 +9,7 @@
     </thead>
 
     <tbody>
-        <% @projects.each do |project| %>
-
+      <% @projects.each do |project| %>
         <article class="media" style="padding: 1em;">
             <figure class="media-left">
                 <p class="image is-256x256">
@@ -19,7 +18,6 @@
             </figure>
             <div class="media-content">
                 <div class="content">
-
                     <strong><%= project.title %></strong>
                     <small><%= project.user.username %></small>
                     <br>
@@ -31,11 +29,10 @@
                         <small>
                             Start date:<%= project.start_date %>
                         </small>
-                        <small>
-                            Ratings:
-                            <%= project.ratings %></small>
                     </p>
                     <%= link_to 'Show', project, class: "button is-primary"%>
+                    <i class="fa fa-star button is-primary stars" aria-hidden="true"> <%= project.ratings %></i>
+                    <i class="fa fa-users button is-primary stars" aria-hidden="true"> <%= @collaborators.where(:project_id => project.id, :approved => true).count %></i>
                 </div>
             </div>
         </article>

@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @projects = Project.all
     @users = User.all
+    @collaborators = Collaborator.all
   end
 
   def about

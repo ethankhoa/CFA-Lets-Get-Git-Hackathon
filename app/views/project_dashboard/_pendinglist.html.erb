@@ -16,7 +16,7 @@
                 <td><%= c.user.username %></td>
                 <td><%= c.user.email %></td>
                 <td>
-                    <a class="button is-info is-outlined">Delete</a>
+                    <%= link_to 'Approve', edit_project_collaborator_path(project_id: c.project_id, id: c.id), class: "button is-info is-outlined" %>
                 </td>
             </table>
             <% end %>

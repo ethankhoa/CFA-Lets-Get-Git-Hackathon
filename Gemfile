@@ -38,6 +38,7 @@ gem 'devise'
 gem 'bulma-rails', "~> 0.4.0"
 gem 'xmlrpc'
 gem 'gravatar-ultimate'
+gem 'font-awesome-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
