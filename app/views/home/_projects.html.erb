@@ -19,11 +19,13 @@
                     <%= project.start_date %></p>
                 <p style="padding-top:0;">Status:
                     <%= project.status %></p>
-                          <div class ="footer">
-                  <%= link_to 'Show', project, class: "button is-primary"%>
-                  <i class="fa fa-star button is-primary stars" aria-hidden="true"> <%= project.ratings %></i>
-                  <i class="fa fa-users button is-primary stars" aria-hidden="true"> <%= @collaborators.where(:project_id => project.id, :approved => true).count %></i>
-              </div>
+              <!--  <div class="footer" style="padding:0">
+                    <%= link_to 'Show', project, class: "button is-info"%>
+                    <i class="fa fa-star button is-info stars" aria-hidden="true">
+                        <%= project.ratings %></i>
+                    <i class="fa fa-users button is-info stars" aria-hidden="true">
+                        <%= @collaborators.where(:project_id => project.id, :approved => true).count %></i>
+                </div> -->
             </div>
             <% end %>
         </div>
