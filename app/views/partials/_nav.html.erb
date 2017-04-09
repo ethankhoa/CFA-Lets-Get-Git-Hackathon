@@ -6,25 +6,25 @@
             </a>
             <a class="nav-item is-tab is-active" href="/">Home</a>
             <% if user_signed_in? %>
-              <%= link_to('Dashboard', pages_dashboard_path, class: "nav-item is-tab")  %>
-              <%= link_to('Find Collaborators', pages_users_path, class: "nav-item is-tab")  %>
+            <%= link_to('Dashboard', pages_dashboard_path, class: "nav-item is-tab")  %>
+            <%= link_to('Find Collaborators', pages_users_path, class: "nav-item is-tab")  %>
+            <%= link_to('Find Projects', projects_path, class: "nav-item is-tab")  %>
+            <%= link_to('Forum', forums_path, class: "nav-item is-tab")  %>
             <% end %>
         </div>
 
         <div class="nav-right nav-menu">
             <% if user_signed_in? %>
-                <%= link_to('Forum', forums_path, class: "nav-item is-tab")  %>
-                <a class="nav-item is-tab">
-                    <figure class="image is-16x16" style="margin-right: 8px;">
-                        <%= image_tag(Gravatar.new("#{current_user.email}").image_url)%>
-                    </figure>
-                    Profile
-                    <!-- add link to user dashboard -->
-                </a>
-                <%= link_to('Logout', destroy_user_session_path, class: "nav-item is-tab", :method => :delete) %>
-            <% else %>
-                <%= link_to('Sign Up', new_user_registration_path, class: "nav-item is-tab")  %>
-                <%= link_to('Login', new_user_session_path, class: "nav-item is-tab")  %>
+            <a class="nav-item is-tab">
+                <%= image_tag(Gravatar.new("#{current_user.email}").image_url)%>
+                <p></p>
+                Profile
+                <!-- add link to user dashboard -->
+            </a>
+            <%= link_to('Logout', destroy_user_session_path, class: "nav-item is-tab", :method => :delete) %>
+        <% else %>
+            <%= link_to('Sign Up', new_user_registration_path, class: "nav-item is-tab")  %>
+            <%= link_to('Login', new_user_session_path, class: "nav-item is-tab")  %>
             <% end %>
         </div>
     </div>

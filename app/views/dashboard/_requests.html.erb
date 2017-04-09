@@ -1,27 +1,34 @@
-<div class="box">
-    <div class="media-content">
-        <div class="content">
-            <h2 class="subtitle">
-                COLLABORATOR REQUESTS
-            </h2>
-            <% @pending_collaborators.each do |c| %>
-            <table class="table">
-                <tr>
-                    <th>Project Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Approval Status</th>
-                    <th></th>
-                </tr>
-                <td><%= c.project.title %></td>
-                <td><%= c.user.username %></td>
-                <td><%= c.user.email %></td>
-                <td><%= c.approved %></td>
-                <td>
-                   <%= link_to 'Approve', edit_project_collaborator_path(project_id: c.project_id, id: c.id), class: "button is-info is-outlined" %>
-                </td>
-            </table>
-            <% end %>
+<div class="container">
+    <div class="box">
+        <div class="media-content">
+            <div class="content">
+                <h1 class="title" style="padding:0;">
+                    COLLABORATION REQUESTS
+                </h1>
+                <table class="table is-striped">
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Approval Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <% @pending_collaborators.each do |c| %>
+                    <tbody>
+                        <td><%= c.project.title %></td>
+                        <td><%= c.user.username %></td>
+                        <td><%= c.user.email %></td>
+                        <td><%= c.approved %></td>
+                        <td>
+                            <%= link_to 'Approve', edit_project_collaborator_path(project_id: c.project_id, id: c.id), class: "button is-info is-outlined" %>
+                        </td>
+                    </tbody>
+                    <% end %>
+                </table>
+
+            </div>
         </div>
     </div>
 </div>

@@ -1,22 +1,31 @@
-<%= form_for([@project, collaborator]) do |f| %>
-  <% if collaborator.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(collaborator.errors.count, "error") %> prohibited this collaborator from being saved:</h2>
+<section class="section"></section>
+<div class="card" style="margin-left:30em;margin-right:30em">
+    <div class="card-content is-center">
+        <%= form_for([@project, collaborator]) do |f| %>
+        <% if collaborator.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(collaborator.errors.count, "error") %>
+                prohibited this collaborator from being saved:</h2>
+            <ul>
+                <% collaborator.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+        <% end %>
 
-      <ul>
-      <% collaborator.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <div class="field">
+            <%= f.label :approved %>
+            <%= f.check_box :approved %>
+        </div>
+
+        <div class="actions">
+            <%= f.submit "Submit", class:"button" %>
+            <%= link_to 'Back', pages_dashboard_path %>
+        </div>
+
+        <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :approved %>
-    <%= f.check_box :approved %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+</section>
+<br>

@@ -1,41 +1,43 @@
 <section class="hero is-light">
     <div class="hero-body">
-      <div class="container">
-        <h1 class="title has-text-centered">
-          Users
-        </h1>
-      </div>
+        <div class="container">
+            <h1 class="title has-text-centered">
+                PROJECT WARRIORS
+            </h1>
+        </div>
 
-    <div class="columns is-multiline">
-      <% @users.first(3).each do |user| %>
-      <div class="column is-one-third">
-          <div class="card" style="background-color: whitesmoke;">
-              <div class="card-image">
-                  <figure class="image">
-                      <%=  image_tag "/assets/captain.jpg" %>
-                  </figure>
-              </div>
-              <div class="card-content">
-                  <div class="media">
-                      <div class="media-left">
-                          <figure class="image is-164x164">
-                              <%=image_tag(Gravatar.new("#{user.email}").image_url)%>
-                          </figure>
-                      </div>
-                      <div class="media-content">
-                          <p class="title is-4"><%= user.username %></p>
-                          <p class="subtitle is-6"><%= user.email %></p>
-                      </div>
-                  </div>
+        <div class="container">
+            <div class="columns is-multiline">
+                <% @users.first(3).each do |user| %>
+                <div class="column is-one-third">
+                    <div class="card" style="background-color: whitesmoke;">
+                        <div class="card-image">
+                            <figure class="image">
+                                <%=  image_tag "/assets/captain.jpg" %>
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-164x164">
+                                        <%=image_tag(Gravatar.new("#{user.email}").image_url)%>
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4"><%= user.username %></p>
+                                    <p class="subtitle is-6"><%= user.email %></p>
+                                </div>
+                            </div>
 
-                  <div class="content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                      <br>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <% end %>
-    </div>
-</section>
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </section>

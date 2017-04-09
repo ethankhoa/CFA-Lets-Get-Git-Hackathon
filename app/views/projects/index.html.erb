@@ -19,7 +19,6 @@
             </figure>
             <div class="media-content">
                 <div class="content">
-
                     <strong><%= project.title %></strong>
                     <small><%= project.user.username %></small>
                     <br>
@@ -35,7 +34,7 @@
                             Ratings:
                             <%= project.ratings %></small>
                     </p>
-                    <%= link_to 'Show', project, class: "button is-primary"%>
+                    <%= link_to '<button class="button is-info">Project Dashboard</button>'.html_safe, project_pages_project_dashboard_path(project_id: project.id)%>
                 </div>
             </div>
         </article>
