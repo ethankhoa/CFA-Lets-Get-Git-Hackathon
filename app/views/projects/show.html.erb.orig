@@ -19,17 +19,27 @@
   <%= @project.description %>
 </p>
 
-<% @collaborators.each do |c| %>
-    <% if c.user_id == current_user.id %>
-      <% if c.approved == true %>
-        <p><%= link_to '<button class="button">Leave</button>'.html_safe, [@project, c], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% @collaborators.each do |c| %>
+      <% if c.user_id == current_user.id %>
+<<<<<<< HEAD
+        <p><%= link_to 'Leave Project', [@project, c], method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <% else %>
-        <p><%= link_to '<button class="button">Pending</button>'.html_safe, [@project, c], method: :delete, data: { confirm: 'Do You Want To Cancel Your Request?' } %></p>
-      <%end%>
-    <% else %>
+        <p><%= link_to 'Join Project', new_project_collaborator_path(project_id: @project.id)%></p>
+        <% end %>
+    <% end %>
+
+=======
+        <% if c.approved == true %>
+          <p><%= link_to '<button class="button">Leave</button>'.html_safe, [@project, c], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% else %>
+          <p><%= link_to '<button class="button">Pending</button>'.html_safe, [@project, c], method: :delete, data: { confirm: 'Do You Want To Cancel Your Request?' } %></p>
+        <%end%>
+      <% end %>
+    <% end %>
+  <% else %>
     <p><%= link_to '<button class="button">Join</button>'.html_safe, new_project_collaborator_path(project_id: @project.id)%></p>
   <% end %>
-<%end%>
+>>>>>>> fc
 
 <p>
   <strong>Status:</strong>
