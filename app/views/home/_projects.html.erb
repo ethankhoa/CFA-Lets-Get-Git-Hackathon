@@ -1,0 +1,19 @@
+<section class="hero is-light" style="padding:1rem;">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title has-text-centered">
+                Projects
+            </h1>
+        </div>
+        <% @projects.each do |project| %>
+        <div class="columns">
+            <div class="column is-one-third">
+              <p>Title</p>
+                <figure class="image is-400x400">
+                    <img src="http://bulma.io/images/placeholders/480x480.png">
+                </figure>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</section>
