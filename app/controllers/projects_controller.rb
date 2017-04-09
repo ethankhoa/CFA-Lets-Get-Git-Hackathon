@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @collaborator = Project.find(params[:id])
+    @collaborators = Collaborator.all
   end
 
   # GET /projects/new
