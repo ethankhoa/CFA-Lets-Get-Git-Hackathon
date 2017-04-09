@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<figure class="image is-24x24" style="margin-right: 8px;">
+  <%=image_tag(Gravatar.new("#{current_user.email}").image_url)%>
+</figure>
+
+<p>
+  <strong>User:</strong>
+  <%= @project.user.username %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+    <% @collaborators.each do |c| %>
+      <% if c.user_id == current_user.id %>
+<<<<<<< HEAD
+        <p><%= link_to 'Leave Project', [@project, c], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <% else %>
+        <p><%= link_to 'Join Project', new_project_collaborator_path(project_id: @project.id)%></p>
+        <% end %>
+    <% end %>
+
+=======
+        <% if c.approved == true %>
+          <p><%= link_to '<button class="button">Leave</button>'.html_safe, [@project, c], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% else %>
+          <p><%= link_to '<button class="button">Pending</button>'.html_safe, [@project, c], method: :delete, data: { confirm: 'Do You Want To Cancel Your Request?' } %></p>
+        <%end%>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p><%= link_to '<button class="button">Join</button>'.html_safe, new_project_collaborator_path(project_id: @project.id)%></p>
+  <% end %>
+>>>>>>> fc
+
+<p>
+  <strong>Status:</strong>
+  <%= @project.status %>
+</p>
+
+<p>
+  <strong>languages:</strong>
+  <% @project.languages.each do |language|%>
+  <%= language %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @project.start_date %>
+</p>
+
+<p>
+  <strong>Ratings:</strong>
+  <%= @project.ratings %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
