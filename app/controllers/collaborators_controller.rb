@@ -34,7 +34,7 @@ class CollaboratorsController < ApplicationController
     @collaborator = Collaborator.new(collaborator_params)
     @collaborator.user_id = current_user.id
     @project = Project.find(params[:project_id])
-    # @collaborator.project_id = @project.id
+    #@collaborator.project_id = @project.id
     @collaborator.project_id = params[:project_id]
 
     respond_to do |format|
