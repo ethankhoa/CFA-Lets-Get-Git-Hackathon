@@ -1,12 +1,15 @@
-<div class="columns">
-    <div class="column is-10">
-      <h1 class="title"><%= current_user.username %>'s DASHBOARD</h1>
+<div class="container">
+    <div class="columns">
+        <div class="column is-10">
+            <h1 class="title"><%= current_user.username %>'s DASHBOARD</h1>
+        </div>
+        <div class="column is-2" style="padding:2em">
+            <%= link_to 'New Project', new_project_path, class: "button is-primary" %>
+        </div>
     </div>
-    <div class="column is-2" style="padding:2em">
-      <%= link_to 'New Project', new_project_path, class: "button is-primary" %>
-    </div>
-</div>
 
-<%= render 'dashboard/myinfo'%>
-<%= render 'dashboard/myprojects'%>
-<%= render 'dashboard/collaborators'%>
+    <%= render 'dashboard/myinfo'%>
+    <%= render 'dashboard/myprojects'%>
+    <%= render 'dashboard/collaborators'%>
+</div>
+<br>
