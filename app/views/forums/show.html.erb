@@ -1,25 +1,21 @@
-<p id="notice"><%= notice %></p>
+<section></section>
+<h1 class="title">FORUM: <%= @forum.name  %></h1>
 
-<h1><%= @forum.name  %></h1>
-
-<div class="panel panel-default">
-<table class="table">
-  <tr>
-    <th width="60%">Topic Title</th>
-    <th width="10%">Replies</th>
-    <th width="30%">Last Post</th>
-  </tr>
-  <% for topic in @forum.topics %>
-    <tr>
-      <td><%= link_to h(topic.name), topic_path(topic.id) %>
-      <td><%= topic.posts.count %></td>
-      <td class="right"></td>
-      <td><%= link_to "Show", topic, class: "btn btn-default" %></td>
-      <td><%= link_to "Edit", edit_topic_path(topic), class: "btn btn-default" %></td>
-      <td><%= link_to "Destroy", topic, :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="container">
+    <table class="table is-striped">
+        <tr>
+            <th width="60%">Topic Title</th>
+            <th width="10%">Replies</th>
+            <th width="20%">Last Post</th>
+            <th width="10%"><%= link_to 'New Topic', "/topics/new?forum=#{@forum.id}", class:"button is-success" %></th>
+        </tr>
+        <% for topic in @forum.topics %>
+        <tr>
+            <td><%= link_to topic.name, topic_path(topic.id) %></td>
+            <td><%= topic.posts.count %></td>
+            <td class="right"></td>
+        </tr>
+        <% end %>
+    </table>
 </div>
-
-<p><%= link_to "New Topic", "/topics/new?forum=#{@forum.id}", class: "btn btn-default" %></p>
+<br>

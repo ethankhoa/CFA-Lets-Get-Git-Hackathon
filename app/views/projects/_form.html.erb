@@ -1,51 +1,58 @@
-<%= form_for(project) do |f| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<div class="container">
+    <div class="box">
+        <%= form_for(project) do |f| %>
+        <% if project.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(project.errors.count, "error") %>
+                prohibited this project from being saved:</h2>
 
-      <ul>
-      <% project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+                <% project.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+        <% end %>
+
+        <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "box"%>
+        </div>
+
+        <div class="field">
+            <%= f.hidden_field :user_id %>
+        </div>
+
+        <div class="field">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: "box", :cols => 80, :rows => 10 %>
+        </div>
+
+        <div class="field">
+            <%= f.label :status %>
+            <%= f.text_field :status %>
+        </div>
+
+        <div class="field">
+            <%= f.label :languages %>
+            <%= f.text_field :languages, multiple: true %>
+        </div>
+
+        <div class="field">
+            <%= f.label :start_date %>
+            <%= f.date_select :start_date %>
+        </div>
+
+        <div class="field">
+            <%= f.label :ratings %>
+            <%= f.number_field :ratings %>
+        </div>
+
+        <div class="actions">
+            <%= f.submit %>
+            <%= link_to 'Back', projects_path %>
+        </div>
+        <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.hidden_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.text_field :status %>
-  </div>
-
-  <div class="field">
-    <%= f.label :languages %>
-    <%= f.text_field :languages, multiple: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :start_date %>
-    <%= f.date_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= f.label :ratings %>
-    <%= f.number_field :ratings %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+<br>
