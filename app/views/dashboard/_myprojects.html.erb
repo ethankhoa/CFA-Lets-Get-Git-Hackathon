@@ -17,7 +17,8 @@
           <td><%= project.status %></td>
           <td><%= project.start_date %></td>
           <td><%= project.languages %></td>
-          <td><a class="button is-info is-outlined">Project Dashboard</a></td> <!-- add button to view project dashboard-->
+          <td><%= link_to '<button class="button is-info is-outlined">Project Dashboard</button>'.html_safe, project_pages_project_dashboard_path(project_id: project.id)%>
+</td> <!-- add button to view project dashboard-->
         </table>
       <% end %>
     </div>

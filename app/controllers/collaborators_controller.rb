@@ -51,7 +51,7 @@ class CollaboratorsController < ApplicationController
   def update
     respond_to do |format|
       if @collaborator.update(collaborator_params)
-        format.html { redirect_to @collaborator, notice: 'Collaborator was successfully updated.' }
+        format.html { redirect_to project_collaborators_path, notice: 'Collaborator was successfully updated.' }
         format.json { render :show, status: :ok, location: @collaborator }
       else
         format.html { render :edit }

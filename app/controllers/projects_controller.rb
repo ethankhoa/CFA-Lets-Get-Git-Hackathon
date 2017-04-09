@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   # GET /projects.json
+
   def index
     @projects = Project.all
   end
@@ -10,7 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @collaborators = Collaborator.all
+    @collaborator = Project.find(params[:id])
   end
 
   # GET /projects/new
@@ -61,6 +62,7 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

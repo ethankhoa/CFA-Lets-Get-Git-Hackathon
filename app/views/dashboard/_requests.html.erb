@@ -4,7 +4,7 @@
             <h2 class="subtitle">
                 COLLABORATORS REQUESTS
             </h2>
-            <% @collaborators.each do |c| %>
+            <% @pending_collaborators.each do |c| %>
             <table class="table">
                 <tr>
                     <th>Project Name</th>
@@ -14,7 +14,6 @@
                     <th></th>
                     <!-- add button to change status of collaborators here -->
                 </tr>
-
                 <td><%= c.project.title %></td>
                 <td><%= c.user.username %></td>
                 <td><%= c.user.email %></td>

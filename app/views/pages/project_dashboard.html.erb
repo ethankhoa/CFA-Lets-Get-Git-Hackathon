@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="columns">
+        <div class="column is-10">
+            <h1 class="title"><%= @project.title.upcase %> DASHBOARD</h1>
+        </div>
+        <div class="column is-2" style="padding:2em">
+            <!-- <%= link_to 'New Project', new_project_path, class: "button is-primary" %> -->
+        </div>
+    </div>
+
+    <%= render 'project_dashboard/projectinfo'%>
+    <%= render 'project_dashboard/collaborators'%>
+    <%= render 'project_dashboard/pendinglist'%>
+</div>
+<br>

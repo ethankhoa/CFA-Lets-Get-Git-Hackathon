@@ -1,0 +1,25 @@
+<div class="box">
+    <div class="media-content">
+        <div class="content">
+            <h2 class="subtitle">
+                COLLABORATORS
+            </h2>
+            <% @approved_collaborators.each do |c| %>
+            <table class="table">
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th></th>
+                    <!-- add button to change status of collaborators here -->
+                </tr>
+
+                <td><%= c.user.username %></td>
+                <td><%= c.user.email %></td>
+                <td>
+                    <a class="button is-info is-outlined">Delete</a>
+                </td>
+            </table>
+            <% end %>
+        </div>
+    </div>
+</div>
