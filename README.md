@@ -22,3 +22,9 @@
 
 ### Site Heirarchy
 <img src="http://res.cloudinary.com/ethankhoa/image/upload/v1491882139/pitch_heirarchy_trvks1.png">
+
+### Contributors
+* <a href="http://www.github.com/ethankhoa">Ethan Huynh</a>
+* <a href="https://github.com/suryast">Surya Setiyaputra</a>
+* <a href="http://www.github.com/firmanc">Firman Cahyandi</a>
+* <a href="http://www.github.com/samturner3">Sam Turner</a>
